@@ -1,0 +1,58 @@
+{
+  "name": "microversehub",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "author": "vivien",
+  "license": "ISC",
+  "description": "使用 v-micro-app-plugin 搭建的 monorepo 微前端项目框架，基于京东推出的 MicroApp，技术栈无关，开箱即用。",
+  "main": "index.js",
+  "workspaces": [
+    "packages/*"
+  ],
+  "scripts": {
+    "dev": "vite",
+    "build": "vue-tsc -b && vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "@element-plus/icons-vue": "^2.3.1",
+    "element-plus": "^2.7.7",
+    "less": "^4.2.0",
+    "path": "^0.12.7",
+    "v-micro-app-plugin": "^1.0.60",
+    "vue": "^3.4.35",
+    "vue-router": "^4.4.0"
+  },
+  "keywords": [
+    "v-micro-app-plugin",
+    "vite",
+    "vue",
+    "micro-frontend",
+    "microApp"
+  ],
+  "devDependencies": {
+    "@types/js-cookie": "^3.0.6",
+    "@types/node": "^20.14.15",
+    "@vitejs/plugin-legacy": "^5.3.1",
+    "@vitejs/plugin-vue": "^5.1.0",
+    "@vitejs/plugin-vue-jsx": "^3.1.0",
+    "@vue/eslint-config-prettier": "^9.0.0",
+    "@vue/eslint-config-typescript": "^13.0.0",
+    "@vue/tsconfig": "^0.5.1",
+    "js-cookie": "^3.0.5",
+    "tslib": "^2.6.2",
+    "typescript": "^5.4.5",
+    "vite": "^5.3.5",
+    "vite-plugin-compression": "^0.5.1",
+    "vite-plugin-ejs": "^1.7.0",
+    "vite-plugin-eslint": "^1.8.1",
+    "vite-plugin-imagemin": "^0.6.1",
+    "vite-plugin-mock": "^3.0.2",
+    "vite-plugin-progress": "^0.0.7",
+    "vite-plugin-style-import": "^2.0.0",
+    "vite-plugin-svg-icons": "^2.0.1",
+    "vite-plugin-vue-devtools": "^7.3.7",
+    "vue-tsc": "^2.0.29"
+  }
+}

@@ -1,0 +1,45 @@
+{
+  "compileOnSave": true, 
+  "exclude": ["node_modules", "dist"], 
+  "include": [
+    "src/**/*.ts",
+    "src/**/*.d.ts",
+    "src/**/*.tsx",
+    "src/**/*.vue",
+  ],
+  "ts-node": {
+    "transpileOnly": true,
+    "files": true,
+    "esm": true
+  },
+  "compilerOptions": {
+    //配置编译选项
+    "target": "ESNext",
+    "module": "ESNext",
+    "useDefineForClassFields": true,
+    "moduleResolution": "node",
+    "strict": true,
+    "jsx": "preserve",
+    "sourceMap": true,
+    "resolveJsonModule": true,
+    "esModuleInterop": true,
+    "lib": ["esnext", "dom"],
+    "jsxImportSource": "vue",
+    "baseUrl": "./",
+    "allowJs": true,
+    "forceConsistentCasingInFileNames": true,
+    "allowSyntheticDefaultImports": true,
+    "strictFunctionTypes": false,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "experimentalDecorators": true,
+    "noImplicitAny": false,
+    "skipLibCheck": true,
+    "paths": {
+      // 路径映射，相对于baseUrl
+      "@/*": ["./src/*"],
+    },
+    // "suppressImplicitAnyIndexErrors": true,
+    "types": ["node", "vite/client", "element-plus/global", "vite-plugin-svg-icons/client"] //默认所有可见的”@types“包会在编译过程中被包含进来。 node_modules/@types文件夹下以及它们子文件夹下的所有包都是可见的；如果指定了types，只有被列出来的包才会被包含进来
+  }
+}
