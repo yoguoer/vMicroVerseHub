@@ -10,11 +10,10 @@ import microAppSetting from '@/settings/microAppSetting'
 
 const app = createApp(App)
 const store = createPinia()
-
-const options = microAppSetting
+app.use(router).use(ElementPlus).use(store)
 
 // 初始化微前端插件  
+const options = microAppSetting
 await initMyMicroApp(app, options, router, store);
 
-app.use(router).use(ElementPlus).use(store)
 app.mount('#app')

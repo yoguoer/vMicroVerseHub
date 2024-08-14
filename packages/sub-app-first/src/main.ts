@@ -6,15 +6,15 @@ import router from './router/index'
 import ElementPlus from 'element-plus'
 import 'element-plus/theme-chalk/index.css'
 import initMyMicroApp from 'v-micro-app-plugin'
-import microAppSetting from '@/settings/microAppSetting'
 
 const app = createApp(App)
 const store = createPinia()
 
-const options = microAppSetting
+app.use(router).use(ElementPlus).use(store)
 
+const {default: microAppSetting } = await import('@/settings/microAppSetting')
+const options = microAppSetting
 // 初始化微前端插件  
 await initMyMicroApp(app, options, router, store);
 
-app.use(router).use(ElementPlus).use(store)
 app.mount('#app')

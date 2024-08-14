@@ -78,7 +78,7 @@ const menuList = reactive([
   },
 ]);
 
-const activeIndex = ref("appFirst");
+const activeIndex = ref("user");
 const handleSelect = (key: string, keyPath: string[]) => {
   console.log("key:", key, "keyPath:", keyPath);
   router.push({ name: key });

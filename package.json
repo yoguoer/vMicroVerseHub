@@ -22,7 +22,7 @@
     "less": "^4.2.0",
     "path": "^0.12.7",
     "pinia": "^2.2.1",
-    "v-micro-app-plugin": "^1.0.60",
+    "v-micro-app-plugin": "^1.0.66",
     "vue": "^3.4.35",
     "vue-router": "^4.4.0"
   },
@@ -45,7 +45,7 @@
     "js-cookie": "^3.0.5",
     "tslib": "^2.6.2",
     "typescript": "^5.4.5",
-    "vite": "^5.3.5",
+    "vite": "^5.4.0",
     "vite-plugin-compression": "^0.5.1",
     "vite-plugin-ejs": "^1.7.0",
     "vite-plugin-eslint": "^1.8.1",
