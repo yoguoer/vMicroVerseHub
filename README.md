@@ -1,5 +1,14 @@
-# Vue 3 + TypeScript + Vite
+# vMicroversehub
 
-This template should help get you started developing with Vue 3 and TypeScript in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
+​	vMicroversehub 是一个使用 v-micro-app-plugin（基于京东推出的 MicroApp，技术栈无关，开箱即用） 搭建的 monorepo 微前端项目框架。
 
-Learn more about the recommended Project Setup and IDE Support in the [Vue Docs TypeScript Guide](https://vuejs.org/guide/typescript/overview.html#project-setup).
+# 目录结构
+
+​	本项目使用 monorepo 的方式组织目录结构，将 packages 作为工作目录，内含三个项目：
+
+| 目录名         | 介绍                         | 是否主应用 |
+| -------------- | ---------------------------- | ---------- |
+| main-app       | 主应用，提供一个框架给子应用 | 是         |
+| sub-app-first  | 子应用1                      | 否         |
+| sub-app-second | 子应用2                      | 否         |
+

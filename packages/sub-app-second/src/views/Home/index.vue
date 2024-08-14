@@ -1,7 +1,7 @@
 <template>
   <div class="home">
     <h1>sub-app-Second</h1>
-    <el-button @click="goPage">点我进入！！！</el-button>
+    <el-button @click="goPage" type="primary">点我进入！！！</el-button>
   </div>
 </template>
 
@@ -17,8 +17,8 @@ function goPage() {
 
 <style scoped>
 .home {
-  width: 100vw;
-  height: 100vh;
+  width: 100%;
+  height: 100%;
   background-image: linear-gradient(120deg, #d4fc79 0%, #96e6a1 100%);
   position: absolute;
   top: 0;

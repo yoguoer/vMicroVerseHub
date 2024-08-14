@@ -6,7 +6,7 @@ export default {
     path: "/user",
     name: 'user',
     component: Layout,
-    order: 2,
+    order: 3,
     hidden: false,
     redirect: "userList",
     meta: {

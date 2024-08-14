@@ -1,10 +1,15 @@
 <template>
-  <div class="container">
+  <div
+    :class="
+      _isMicroApp && !_isBaseApp
+        ? 'first-vertical-container'
+        : 'first-horizontal-container'
+    "
+  >
     <div class="layout-top">
       <el-menu
         :default-active="activeIndex"
-        class="el-menu-demo"
-        mode="horizontal"
+        :mode="_isMicroApp && !_isBaseApp ? 'vertical' : 'horizontal'"
         @select="handleSelect"
       >
         <div v-for="item in menuList" :index="item.name" :key="item.name">
@@ -18,10 +23,17 @@
               {{ child.title }}
             </el-menu-item>
           </el-sub-menu>
-          <el-menu-item v-else :key="item.name" :index="item.name">{{
-            item.title
-          }}</el-menu-item>
+          <el-menu-item v-else :key="item.name" :index="item.name"
+            >{{ item.title }}
+          </el-menu-item>
         </div>
+        <el-menu-item
+          index="slot"
+          class="slot-area"
+          v-if="!(_isMicroApp && !_isBaseApp)"
+        >
+          <span slot="title" @click="goHome"> ↩ 返回首页</span>
+        </el-menu-item>
       </el-menu>
     </div>
     <div class="layout-bottom">
@@ -31,10 +43,16 @@
 </template>
 
 <script lang="ts" setup title="Menu">
-import { reactive, ref } from "vue";
-import { useRouter } from "vue-router";
+import { reactive, ref, watch } from "vue";
+import { useRouter, useRoute } from "vue-router";
+import { microAppUtils } from "v-micro-app-plugin";
+
+const { isBaseApp, isMicroApp } = microAppUtils;
+const _isBaseApp = isBaseApp();
+const _isMicroApp = isMicroApp();
 
 const router = useRouter();
+const route = useRoute();
 
 const menuList = reactive([
   { title: "appFirst菜单1", name: "userList" },
@@ -48,23 +66,49 @@ const menuList = reactive([
   },
 ]);
 
-const activeIndex = ref("测试");
+const activeIndex = ref("userList");
 const handleSelect = (key: string, keyPath: string[]) => {
   console.log("key:", key, "keyPath:", keyPath);
   router.push({ name: key });
+  activeIndex.value = key;
 };
+
+const goHome = ()=>{
+  router.push({ name: 'home' });
+} 
+
+watch(
+  () => route,
+  (newValue) => {
+    activeIndex.value = newValue?.name;
+  },
+  { immediate: true, deep: true }
+);
 </script>
 <style lang="less">
-.container {
-  width: 100%;
-  position: absolute;
-  top: 0;
-  left: 0;
+.first-vertical-container,
+.first-horizontal-container {
+  width: 99vw;
+  display: flex;
+  flex-direction: column;
+}
+.first-vertical-container {
+  flex-direction: row;
+  .el-menu {
+    width: 300px;
+  }
 }
 .layout-top {
-  width: 100vw;
+  overflow: hidden;
 }
 .layout-bottom {
-  margin-top: 60px;
+  width: 100%;
+  overflow: hidden;
+  height: 100vh;
+  border-left: 1px solid #eee;
+}
+.slot-area {
+  position: absolute;
+  right: 0;
 }
 </style>

@@ -1,11 +1,11 @@
 {
-  "name": "microversehub",
+  "name": "vmicroversehub",
   "private": true,
   "version": "0.0.0",
   "type": "module",
   "author": "vivien",
   "license": "ISC",
-  "description": "使用 v-micro-app-plugin 搭建的 monorepo 微前端项目框架，基于京东推出的 MicroApp，技术栈无关，开箱即用。",
+  "description": "vMicroversehub 是一个使用 v-micro-app-plugin（基于京东推出的 MicroApp，技术栈无关，开箱即用） 搭建的 monorepo 微前端项目框架。",
   "main": "index.js",
   "workspaces": [
     "packages/*"
@@ -17,9 +17,11 @@
   },
   "dependencies": {
     "@element-plus/icons-vue": "^2.3.1",
+    "@micro-zoe/micro-app": "1.0.0-rc.6",
     "element-plus": "^2.7.7",
     "less": "^4.2.0",
     "path": "^0.12.7",
+    "pinia": "^2.2.1",
     "v-micro-app-plugin": "^1.0.60",
     "vue": "^3.4.35",
     "vue-router": "^4.4.0"
