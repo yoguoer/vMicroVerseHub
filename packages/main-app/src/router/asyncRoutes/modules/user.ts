@@ -3,12 +3,12 @@ import { Layout } from '@/router/layout'
 import { User } from "@element-plus/icons-vue";
 
 export default {
-    path: "/user",
-    name: 'user',
+    path: "/mainuser",
+    name: 'mainuser',
     component: Layout,
     order: 3,
     hidden: false,
-    redirect: "userList",
+    redirect: "mainuserList",
     meta: {
         title: '用户管理',
         hideBreadcrumb: false,
@@ -16,27 +16,27 @@ export default {
     },
     children: [
         {
-            path: '/userList',
+            path: '/mainuserList',
             component: () => import("@/views/blankPage/index.vue"),
-            name: 'userList',
+            name: 'mainuserList',
             hidden: false,
             meta: {
                 title: '用户列表',
             }
         },
         {
-            path: '/group',
+            path: '/maingroup',
             component: () => import("@/views/blankPage/index.vue"),
-            name: 'group',
+            name: 'maingroup',
             hidden: false,
             meta: {
                 title: '用户组列表',
             }
         },
         {
-            path: '/auth',
+            path: '/mainauth',
             component: () => import("@/views/blankPage/index.vue"),
-            name: 'auth',
+            name: 'mainauth',
             hidden: false,
             meta: {
                 title: '权限列表',

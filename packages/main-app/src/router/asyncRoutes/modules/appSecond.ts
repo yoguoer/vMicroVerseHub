@@ -8,7 +8,6 @@ export default {
   component: Layout,
   order: 2,
   hidden: false,
-  
   meta: {
     title: 'appSecond',
     hideBreadcrumb: false,

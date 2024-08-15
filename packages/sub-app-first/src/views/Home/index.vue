@@ -11,7 +11,7 @@ import { useRouter } from "vue-router";
 const router = useRouter();
 
 function goPage() {
-  router.push({ name: "user" });
+  router.push({ name: "firsttest" });
 }
 </script>
 

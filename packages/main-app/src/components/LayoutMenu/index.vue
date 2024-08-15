@@ -70,15 +70,16 @@ const menuList = reactive([
   { title: "子应用B", name: "appSecond" },
   {
     title: "其它",
-    name: "user",
+    name: "mainuser",
     children: [
-      { title: "auth", name: "auth" },
-      { title: "group", name: "group" },
+      { title: "mainauth", name: "mainauth" },
+      { title: "maingroup", name: "maingroup" },
     ],
   },
+  { title: "测试通信", name: "maintestMsg" },
 ]);
 
-const activeIndex = ref("user");
+const activeIndex = ref("maintest");
 const handleSelect = (key: string, keyPath: string[]) => {
   console.log("key:", key, "keyPath:", keyPath);
   router.push({ name: key });

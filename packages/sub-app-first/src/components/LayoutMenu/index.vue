@@ -55,18 +55,19 @@ const router = useRouter();
 const route = useRoute();
 
 const menuList = reactive([
-  { title: "appFirst菜单1", name: "userList" },
+  { title: "appFirst菜单1", name: "firstuserList" },
   {
     title: "appFirst菜单2",
     name: "group",
     children: [
-      { title: "auth", name: "auth" },
-      { title: "group", name: "group" },
+      { title: "firstauth", name: "firstauth" },
+      { title: "firstgroup", name: "firstgroup" },
     ],
   },
+  { title: "测试通信",name: "firsttestMsg" },
 ]);
 
-const activeIndex = ref("userList");
+const activeIndex = ref("firstuserList");
 const handleSelect = (key: string, keyPath: string[]) => {
   console.log("key:", key, "keyPath:", keyPath);
   router.push({ name: key });

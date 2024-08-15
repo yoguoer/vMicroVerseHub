@@ -2,17 +2,13 @@
  * 无需权限同步加载的公共路由
  */
 import type { AppRouteRecordRaw } from "@/router/types";
-import { microAppUtils } from "v-micro-app-plugin";
-
-const { isMicroApp } = microAppUtils
-const _isMicroApp = isMicroApp()
 
 // 根路由
 export const RootRoute: AppRouteRecordRaw = {
   path: "/",
   name: "Root",
   hidden: true,
-  redirect: _isMicroApp ? '/user' : '/home',
+  redirect: window.__MICRO_APP_ENVIRONMENT__ ? '/secondtest' : '/home',
   meta: {
     title: "首页",
   },

@@ -1,11 +1,10 @@
 <template>
   <div :class="[`${prefixCls}-container`]">
     <!-- name：应用名称, url：应用地址 -->
-    <micro-app v-bind="options" :name="name"></micro-app>
+    <micro-app v-bind="options" :name="options.name" keep-alive></micro-app>
   </div>
 </template>
 <script setup lang="ts">
-import { microAppUtils } from "v-micro-app-plugin";
 import { watch } from "vue";
 
 const props = defineProps<{
@@ -14,14 +13,12 @@ const props = defineProps<{
   };
 }>();
 
-let name = microAppUtils.getMicroAppName(props.options?.name)
-let prefixCls = name
+let prefixCls = props.options.name
 
 watch(
   () => props.options,
   (newValue) => {
-    name = microAppUtils.getMicroAppName(newValue.name)
-    prefixCls = name
+    prefixCls = newValue.name
   },
   { immediate: true, deep: true }
 );
