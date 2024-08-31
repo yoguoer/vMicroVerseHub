@@ -1,6 +1,6 @@
 <template>
   <div class="test-msg">
-    <h1>sub-app-first</h1>
+    <h1>sub-app-second</h1>
     <h3>测试给主应用发送信息~</h3>
     <div>
       <el-button @click="testSendMessage" type="primary">点击发送信息</el-button>

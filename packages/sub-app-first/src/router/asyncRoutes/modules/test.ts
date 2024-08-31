@@ -18,7 +18,7 @@ export default {
         {
             path: '/firsttestMsg',
             component: () => import("@/views/testMsg/index.vue"),
-            name: 'firsttestMssg',
+            name: 'firsttestMsg',
             hidden: false,
             meta: {
                 title: '测试通信',
