@@ -1,7 +1,7 @@
 <template>
   <div
     :class="
-      _isMicroApp && !_isBaseApp
+      microBaseApp
         ? 'second-vertical-container'
         : 'second-horizontal-container'
     "
@@ -9,7 +9,7 @@
     <div class="layout-top">
       <el-menu
         :default-active="activeIndex"
-        :mode="_isMicroApp && !_isBaseApp ? 'vertical' : 'horizontal'"
+        :mode="microBaseApp ? 'vertical' : 'horizontal'"
         @select="handleSelect"
       >
         <div v-for="item in menuList" :index="item.name" :key="item.name">
@@ -30,7 +30,7 @@
         <el-menu-item
           index="slot"
           class="slot-area"
-          v-if="!(_isMicroApp && !_isBaseApp)"
+          v-if="!(microBaseApp)"
         >
           <span slot="title" @click="goHome"> ↩ 返回首页</span>
         </el-menu-item>
@@ -43,10 +43,10 @@
 </template>
 
 <script lang="ts" setup title="Menu">
-import { reactive, ref, watch } from "vue";
+import {computed, reactive, ref, watch } from "vue";
 import { useRouter, useRoute } from "vue-router";
 import { microAppUtils } from "v-micro-app-plugin";
-
+import menus from "@/settings/menus"
 const { isBaseApp, isMicroApp } = microAppUtils;
 const _isBaseApp = isBaseApp();
 const _isMicroApp = isMicroApp();
@@ -54,18 +54,7 @@ const _isMicroApp = isMicroApp();
 const router = useRouter();
 const route = useRoute();
 
-const menuList = reactive([
-  { title: "appSecond菜单1", name: "seconduserList" },
-  {
-    title: "appSecond菜单2",
-    name: "group",
-    children: [
-      { title: "secondauth", name: "secondauth" },
-      { title: "secondgroup", name: "secondgroup" },
-    ],
-  },
-  { title: "测试通信", name: "secondtestMsg" },
-]);
+const menuList = reactive(menus);
 
 const activeIndex = ref("secondtestMsg");
 const handleSelect = (key: string, keyPath: string[]) => {
@@ -73,7 +62,9 @@ const handleSelect = (key: string, keyPath: string[]) => {
   router.push({ name: key });
   activeIndex.value = key;
 };
-
+const microBaseApp = computed(() => {
+  return _isMicroApp && !_isBaseApp 
+});
 const goHome = ()=>{
   router.push({ name: 'home' });
 } 
