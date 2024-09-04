@@ -22,7 +22,7 @@
     "less": "^4.2.0",
     "path": "^0.12.7",
     "pinia": "^2.2.1",
-    "v-micro-app-plugin": "^1.0.61",
+    "v-micro-app-plugin": "^1.0.66",
     "vue": "^3.4.35",
     "vue-router": "^4.4.0"
   },

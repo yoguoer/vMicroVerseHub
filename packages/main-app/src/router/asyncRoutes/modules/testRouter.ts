@@ -3,25 +3,25 @@ import { Layout } from '@/router/layout'
 import { User } from "@element-plus/icons-vue";
 
 export default {
-    path: "/maintest",
-    name: 'maintest',
+    path: "/maintest-routers",
+    name: 'maintestRouters',
     component: Layout,
-    order: 3,
+    order: 4,
     hidden: false,
-    redirect: "maintestMsg",
+    redirect: "maintest-router",
     meta: {
-        title: '测试通信',
+        title: '测试路由',
         hideBreadcrumb: false,
         icon: User
     },
     children: [
         {
-            path: '/maintestMsg',
-            component: () => import("@/views/testMsg/index.vue"),
-            name: 'maintestMsg',
+            path: '/maintest-router',
+            component: () => import("@/views/testRouters/index.vue"),
+            name: 'maintestRouter',
             hidden: true,
             meta: {
-                title: '测试通信',
+                title: '测试路由',
             }
         }
     ]

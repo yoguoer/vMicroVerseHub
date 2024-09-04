@@ -9,7 +9,7 @@ export default {
   order: 1,
   hidden: false,
   meta: {
-    title: 'appFirst',
+    title: '子应用A',
     hideBreadcrumb: false,
     icon: Document,
     microAppOptions: microAppSetting.subAppConfigs!['appFirst']

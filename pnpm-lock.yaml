@@ -27,8 +27,8 @@ importers:
         specifier: ^2.2.1
         version: 2.2.2(typescript@5.5.4)(vue@3.4.38(typescript@5.5.4))
       v-micro-app-plugin:
-        specifier: ^1.0.61
-        version: 1.0.61(@types/node@20.16.3)(less@4.2.0)(terser@5.31.6)
+        specifier: ^1.0.66
+        version: 1.0.66(@types/node@20.16.3)(less@4.2.0)(terser@5.31.6)
       vue:
         specifier: ^3.4.35
         version: 3.4.38(typescript@5.5.4)
@@ -4178,8 +4178,8 @@ packages:
     deprecated: Please upgrade  to version 7 or higher.  Older versions may use Math.random() in certain circumstances, which is known to be problematic.  See https://v8.dev/blog/math-random for details.
     hasBin: true
 
-  v-micro-app-plugin@1.0.61:
-    resolution: {integrity: sha512-YX7EllHn2O29dWgD2z0+vUO5xSRgZaIxnAOrZdCwuiF3paADzahnfOQU+wtVT+KTo8zIxsqS4rrp84Gglu0psg==}
+  v-micro-app-plugin@1.0.66:
+    resolution: {integrity: sha512-3QP5bTrPnpyyDbf5Njs4BwHyfy7BMNHVQ9qm6D1wuyNLAWLlOJKKAPDQ+8BkftR6C4dFyJujAW/vhe/RbJc5aQ==}
 
   validate-npm-package-license@3.0.4:
     resolution: {integrity: sha512-DpKm2Ui/xN7/HQKCtpZxoRWBhZ9Z0kqtygG8XCgNQ8ZlDnxuQmWhj566j8fN4Cu3/JmbhsDo7fcAJq4s9h27Ew==}
@@ -8926,7 +8926,7 @@ snapshots:
 
   uuid@3.4.0: {}
 
-  v-micro-app-plugin@1.0.61(@types/node@20.16.3)(less@4.2.0)(terser@5.31.6):
+  v-micro-app-plugin@1.0.66(@types/node@20.16.3)(less@4.2.0)(terser@5.31.6):
     dependencies:
       '@micro-zoe/micro-app': 1.0.0-rc.6
       vite: 5.4.2(@types/node@20.16.3)(less@4.2.0)(terser@5.31.6)

@@ -7,7 +7,7 @@ export default {
     name: 'mainuser',
     component: Layout,
     order: 3,
-    hidden: false,
+    hidden: true,
     redirect: "mainuserList",
     meta: {
         title: '用户管理',
