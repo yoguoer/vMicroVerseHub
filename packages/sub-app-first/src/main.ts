@@ -6,7 +6,7 @@ import router from './router/index'
 import ElementPlus from 'element-plus'
 import 'element-plus/theme-chalk/index.css'
 import initMyMicroApp from 'v-micro-app-plugin'
-import { vEChartsInstall }  from 'v-echarts-ui'
+import { vEChartsInstall }  from 'v-echarts-ui' // 或者：import { vEChartsInstall }  from 'v-echarts-ui/common-charts'
 console.log("🚀 ~ vEChartsInstall:", vEChartsInstall)
 
 const app = createApp(App)

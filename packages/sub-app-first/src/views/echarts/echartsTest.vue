@@ -1,6 +1,5 @@
 <template>
   <vBar
-    class="bar-demo"
     :data="chartData"
     :options="chartOptions"
     :params="chartParams"
@@ -13,7 +12,7 @@
 </template>
 
 <script setup lang="ts" name="BarDemo">
-import { vBar }  from 'v-echarts-ui';
+import { vBar }  from 'v-echarts-ui'; // 或者：import { vBar }  from 'v-echarts-ui/common-charts';
 import { computed, onMounted, ref } from 'vue';
 
 const id = 'BarDemo';
