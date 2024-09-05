@@ -56,6 +56,7 @@ const route = useRoute();
 
 const menuList = reactive([
   { title: "appFirst菜单1", name: "firstuserList" },
+  { title: "图表", name: "echartsTest" },
   {
     title: "appFirst菜单2",
     name: "group",
