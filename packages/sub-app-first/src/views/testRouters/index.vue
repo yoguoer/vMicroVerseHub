@@ -1,11 +1,11 @@
 <template>
   <div class="test-msg">
     <h1>main-app</h1>
-    <h3>测试给路由跳转</h3>
+    <h3>测试给路由跳转参数</h3>
     <el-input class="input-container" type="textarea" :rows="2" v-model="message" placeholder="请输入跳转参数" />
     <div>
-      <el-button @click="testRouterFirstHome" type="primary">appFirst 首页</el-button>
-      <el-button @click="testRouterFirstMessage" type="primary">appFirst 测试通信页</el-button>
+      <el-button @click="testRouterFirstHome" type="primary">main 首页</el-button>
+      <el-button @click="testRouterFirstMessage" type="primary">main 测试通信页</el-button>
       <el-button @click="testRouterSecondHome" type="warning"> appSecond 首页</el-button>
       <el-button @click="testRouterSecondMessage" type="warning">appSecond 测试通信页</el-button>
      
@@ -18,10 +18,10 @@ import  { microAppRouter } from "v-micro-app-plugin";
 import { ref } from "vue";
 const message = ref("");
 function testRouterFirstHome() {
-  microAppRouter.push({name: 'appFirst', path: '/home'})
+  microAppRouter.push({name: 'mainApp', path: '/home'})
 }
 function testRouterFirstMessage() {
-  microAppRouter.push({name: 'appFirst', path: '/firsttestMsg'})
+  microAppRouter.push({name: 'mainApp', path: '/maintestMsg'})
 }
 
 function testRouterSecondHome() {

@@ -19,7 +19,7 @@ export default {
             path: '/secondtestMsg',
             component: () => import("@/views/testMsg/index.vue"),
             name: 'secondtestMsg',
-            hidden: false,
+            hidden: true,
             meta: {
                 title: '测试通信',
             }
