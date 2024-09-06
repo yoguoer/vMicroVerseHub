@@ -10,7 +10,7 @@ export default {
     hidden: false,
     redirect: "secondtestMsg",
     meta: {
-        title: '测试',
+        title: '测试通信',
         hideBreadcrumb: false,
         icon: User
     },

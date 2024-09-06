@@ -4,10 +4,10 @@
     <h3>测试给路由跳转</h3>
     <el-input class="input-container" type="textarea" :rows="2" v-model="message" placeholder="请输入跳转参数" />
     <div>
-      <el-button @click="testRouterFirstHome" type="primary">appFirst 首页</el-button>
-      <el-button @click="testRouterFirstMessage" type="primary">appFirst 测试通信页</el-button>
-      <el-button @click="testRouterSecondHome" type="warning"> appSecond 首页</el-button>
-      <el-button @click="testRouterSecondMessage" type="warning">appSecond 测试通信页</el-button>
+      <el-button @click="testRouterFirstHome" type="primary">appFirst 用户列表页</el-button>
+      <el-button @click="testRouterFirstMessage" type="primary">appFirst 测试路由页</el-button>
+      <el-button @click="testRouterSecondHome" type="warning"> appSecond 用户列表页</el-button>
+      <el-button @click="testRouterSecondMessage" type="warning">appSecond 测试路由页</el-button>
      
     </div>
   </div>
@@ -15,20 +15,32 @@
 
 <script setup>
 import  { microAppRouter } from "v-micro-app-plugin";
-import { ref } from "vue";
+import { ref,nextTick } from "vue";
+import { useRouter } from "vue-router";
+const router = useRouter();
 const message = ref("");
 function testRouterFirstHome() {
-  microAppRouter.push({name: 'appFirst', path: '/home'})
+  router.push({name: 'appFirst'})
+  nextTick(()=> {
+    microAppRouter.push({name: 'appFirst', path: '/firstuser'})
+  })
 }
 function testRouterFirstMessage() {
-  microAppRouter.push({name: 'appFirst', path: '/firsttestMsg'})
+  router.push({name: 'appFirst'})
+  microAppRouter.push({name: 'appFirst', path: '/firsttest-routers'})
 }
 
 function testRouterSecondHome() {
-  microAppRouter.push({name: 'appSecond', path: '/home'})
+  router.push({name: 'appSecond'})
+  nextTick(()=> {
+    microAppRouter.push({name: 'appSecond', path: '/seconduser'})
+  })
 }
 function testRouterSecondMessage() {
-  microAppRouter.push({name: 'appSecond', path: '/secondtestMsg'})
+  router.push({name: 'appSecond'})
+  nextTick(()=> {
+    microAppRouter.push({name: 'appSecond', path: '/secondtest-routers'})
+  })
 }
  
 </script>
