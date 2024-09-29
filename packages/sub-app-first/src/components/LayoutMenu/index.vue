@@ -1,11 +1,7 @@
 <template>
-  <div :class="_isMicroApp && !_isBaseApp ? 'first-vertical-container' : 'first-horizontal-container'">
+  <div :class="microBaseApp ? 'first-vertical-container' : 'first-horizontal-container'">
     <div class="layout-top">
-      <el-menu
-        :default-active="activeIndex"
-        :mode="_isMicroApp && !_isBaseApp ? 'vertical' : 'horizontal'"
-        @select="handleSelect"
-      >
+      <el-menu :default-active="activeIndex" :mode="microBaseApp ? 'vertical' : 'horizontal'" @select="handleSelect">
         <div v-for="item in menuList" :index="item.name" :key="item.name">
           <el-sub-menu v-if="item.children && item.children.length > 0">
             <template #title>{{ item.title }}</template>
@@ -15,7 +11,7 @@
           </el-sub-menu>
           <el-menu-item v-else :key="item.name" :index="item.name">{{ item.title }} </el-menu-item>
         </div>
-        <el-menu-item index="slot" class="slot-area" v-if="!(_isMicroApp && !_isBaseApp)">
+        <el-menu-item index="slot" class="slot-area" v-if="!microBaseApp">
           <span slot="title" @click="goHome"> ↩ 返回首页</span>
         </el-menu-item>
       </el-menu>
@@ -27,30 +23,20 @@
 </template>
 
 <script lang="ts" setup title="Menu">
-import { reactive, ref, watch } from "vue";
+import { computed, reactive, ref, watch } from "vue";
 import { useRouter, useRoute } from "vue-router";
 import { microAppUtils } from "v-micro-app-plugin";
-
+import menus from "@/settings/menus";
 const { isBaseApp, isMicroApp } = microAppUtils;
 const _isBaseApp = isBaseApp();
 const _isMicroApp = isMicroApp();
 
 const router = useRouter();
 const route = useRoute();
-
-const menuList = reactive([
-  { title: "appFirst菜单1", name: "firstuserList" },
-  { title: "图表", name: "echartsTest" },
-  {
-    title: "appFirst菜单2",
-    name: "group",
-    children: [
-      { title: "firstauth", name: "firstauth" },
-      { title: "firstgroup", name: "firstgroup" }
-    ]
-  },
-  { title: "测试通信", name: "firsttestMsg" }
-]);
+const microBaseApp = computed(() => {
+  return _isMicroApp && !_isBaseApp;
+});
+const menuList = reactive(menus);
 
 const activeIndex = ref("firstuserList");
 const handleSelect = (key: string, keyPath: string[]) => {

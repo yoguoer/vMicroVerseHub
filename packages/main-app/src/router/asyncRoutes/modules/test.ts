@@ -6,11 +6,11 @@ export default {
   path: "/maintest",
   name: "maintest",
   component: Layout,
-  order: 2,
+  order: 3,
   hidden: false,
   redirect: "maintestMsg",
   meta: {
-    title: "测试",
+    title: "测试通信",
     hideBreadcrumb: false,
     icon: User
   },
@@ -19,7 +19,7 @@ export default {
       path: "/maintestMsg",
       component: () => import("@/views/testMsg/index.vue"),
       name: "maintestMsg",
-      hidden: false,
+      hidden: true,
       meta: {
         title: "测试通信"
       }

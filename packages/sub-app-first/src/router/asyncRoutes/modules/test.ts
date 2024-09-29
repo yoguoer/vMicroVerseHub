@@ -10,7 +10,7 @@ export default {
   hidden: false,
   redirect: "firsttestMsg",
   meta: {
-    title: "测试",
+    title: "测试通信",
     hideBreadcrumb: false,
     icon: User
   },
@@ -19,7 +19,7 @@ export default {
       path: "/firsttestMsg",
       component: () => import("@/views/testMsg/index.vue"),
       name: "firsttestMsg",
-      hidden: false,
+      hidden: true,
       meta: {
         title: "测试通信"
       }
