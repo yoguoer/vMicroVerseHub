@@ -1,11 +1,5 @@
 <template>
-  <div
-    :class="
-      _isMicroApp && !_isBaseApp
-        ? 'first-vertical-container'
-        : 'first-horizontal-container'
-    "
-  >
+  <div :class="_isMicroApp && !_isBaseApp ? 'first-vertical-container' : 'first-horizontal-container'">
     <div class="layout-top">
       <el-menu
         :default-active="activeIndex"
@@ -15,23 +9,13 @@
         <div v-for="item in menuList" :index="item.name" :key="item.name">
           <el-sub-menu v-if="item.children && item.children.length > 0">
             <template #title>{{ item.title }}</template>
-            <el-menu-item
-              v-for="child in item.children"
-              :key="child.name"
-              :index="child.name"
-            >
+            <el-menu-item v-for="child in item.children" :key="child.name" :index="child.name">
               {{ child.title }}
             </el-menu-item>
           </el-sub-menu>
-          <el-menu-item v-else :key="item.name" :index="item.name"
-            >{{ item.title }}
-          </el-menu-item>
+          <el-menu-item v-else :key="item.name" :index="item.name">{{ item.title }} </el-menu-item>
         </div>
-        <el-menu-item
-          index="slot"
-          class="slot-area"
-          v-if="!(_isMicroApp && !_isBaseApp)"
-        >
+        <el-menu-item index="slot" class="slot-area" v-if="!(_isMicroApp && !_isBaseApp)">
           <span slot="title" @click="goHome"> ↩ 返回首页</span>
         </el-menu-item>
       </el-menu>
@@ -62,10 +46,10 @@ const menuList = reactive([
     name: "group",
     children: [
       { title: "firstauth", name: "firstauth" },
-      { title: "firstgroup", name: "firstgroup" },
-    ],
+      { title: "firstgroup", name: "firstgroup" }
+    ]
   },
-  { title: "测试通信",name: "firsttestMsg" },
+  { title: "测试通信", name: "firsttestMsg" }
 ]);
 
 const activeIndex = ref("firstuserList");
@@ -75,13 +59,13 @@ const handleSelect = (key: string, keyPath: string[]) => {
   activeIndex.value = key;
 };
 
-const goHome = ()=>{
-  router.push({ name: 'home' });
-} 
+const goHome = () => {
+  router.push({ name: "home" });
+};
 
 watch(
   () => route,
-  (newValue) => {
+  newValue => {
     activeIndex.value = newValue?.name;
   },
   { immediate: true, deep: true }

@@ -1,0 +1,78 @@
+{
+  "editor.formatOnSave": true,
+  "editor.codeActionsOnSave": {
+    "source.fixAll.stylelint": "explicit"
+  },
+  "stylelint.enable": true,
+  "stylelint.validate": ["css", "less", "postcss", "scss", "vue", "sass", "html"],
+  "files.eol": "\n",
+  "typescript.tsdk": "node_modules/typescript/lib",
+  "[vue]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[typescript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[json]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[jsonc]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[typescriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[scss]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[html]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[markdown]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[less]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "cSpell.words": [
+    "babylonjs",
+    "windi",
+    "browserslist",
+    "tailwindcss",
+    "esnext",
+    "axios",
+    "vuex",
+    "vueuse",
+    "antv",
+    "tinymce",
+    "qrcode",
+    "sider",
+    "pinia",
+    "sider",
+    "nprogress",
+    "INTLIFY",
+    "stylelint",
+    "esno",
+    "vitejs",
+    "sortablejs",
+    "mockjs",
+    "codemirror",
+    "iconify",
+    "commitlint",
+    "vditor",
+    "vite",
+    "echarts",
+    "cropperjs",
+    "logicflow",
+    "zxcvbn",
+    "lintstagedrc",
+    "brotli",
+    "tailwindcss",
+    "sider",
+    "pnpm",
+    "antd"
+  ]
+}

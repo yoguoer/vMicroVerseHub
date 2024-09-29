@@ -13,12 +13,12 @@ const props = defineProps<{
   };
 }>();
 
-let prefixCls = props.options.name
+let prefixCls = props.options.name;
 
 watch(
   () => props.options,
-  (newValue) => {
-    prefixCls = newValue.name
+  newValue => {
+    prefixCls = newValue.name;
   },
   { immediate: true, deep: true }
 );

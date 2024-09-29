@@ -17,11 +17,11 @@ function goPage() {
 
 <style scoped>
 .home {
-  width: 100%;
-  height: 100%;
-  background-image: linear-gradient(to top, #fbc2eb 0%, #a6c1ee 100%);
   position: absolute;
   top: 0;
   left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: linear-gradient(to top, #fbc2eb 0%, #a6c1ee 100%);
 }
 </style>

@@ -4,12 +4,12 @@
 
 <script>
 export default {
-  name: "App",
+  name: "App"
 };
 </script>
 
 <style lang="less">
-#app{
+#app {
   margin: 0;
   padding: 0;
 }

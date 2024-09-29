@@ -1,0 +1,7 @@
+/dist/*
+/public/*
+public/*
+/doc/*
+/node_modules/*
+**/*.svg
+**/*.sh

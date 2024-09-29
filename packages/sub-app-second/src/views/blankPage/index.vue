@@ -12,9 +12,9 @@
 
 <style scoped>
 .blank {
-  text-align: center;
-  padding-top: 100px;
+  width: 100%;
   height: 90vh;
-  width:100%
+  padding-top: 100px;
+  text-align: center;
 }
 </style>

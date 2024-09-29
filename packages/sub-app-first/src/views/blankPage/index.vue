@@ -12,8 +12,8 @@
 
 <style scoped>
 .blank {
-  text-align: center;
-  padding-top: 100px;
   height: 90vh;
+  padding-top: 100px;
+  text-align: center;
 }
 </style>

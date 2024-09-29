@@ -18,17 +18,17 @@ function testSendMessage() {
     data: { app: "appFirst", value: "🐔appFirst给主应用发送数据~sendMessage" },
     callback: () => {
       console.log("🐔appFirst使用sendMessage发送数据成功，执行回调！");
-    },
+    }
   });
   microAppMessage.sendGlobal({
     data: { fun: "sendGlobal", text: "🐆appFirst给全局发送数据~sendGlobal" },
     callback: () => {
       console.log("🐆使用sendGlobal发送数据成功，执行回调！");
-    },
+    }
   });
 }
 
-function testReceiveMessage(){
+function testReceiveMessage() {
   setTimeout(() => {
     console.log(
       "🐰appFirst接收到的全局信息getGlobalMessage：",
@@ -42,8 +42,8 @@ function testReceiveMessage(){
 
 <style scoped>
 .test-msg {
-  text-align: center;
-  padding-top: 100px;
   height: 90vh;
+  padding-top: 100px;
+  text-align: center;
 }
 </style>

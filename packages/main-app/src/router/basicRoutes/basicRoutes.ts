@@ -8,10 +8,10 @@ export const RootRoute: AppRouteRecordRaw = {
   path: "/",
   name: "Root",
   hidden: true,
-  redirect:'/home',
+  redirect: "/home",
   meta: {
-    title: "首页",
-  },
+    title: "首页"
+  }
 };
 
 //登录页面
@@ -21,11 +21,8 @@ export const homeRoute: AppRouteRecordRaw = {
   hidden: true,
   component: () => import("@/views/Home/index.vue"),
   meta: {
-    title: 'home',
-  },
+    title: "home"
+  }
 };
 
-export default [
-  RootRoute,
-  homeRoute
-]
+export default [RootRoute, homeRoute];
