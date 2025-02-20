@@ -52,8 +52,8 @@ importers:
         specifier: ^5.4.5
         version: 5.5.4
       v-echarts-ui:
-        specifier: ^1.0.6
-        version: 1.0.6(typescript@5.5.4)
+        specifier: ^1.0.8
+        version: 1.0.8(typescript@5.5.4)
       vue-tsc:
         specifier: ^2.0.29
         version: 2.1.6(typescript@5.5.4)
@@ -709,6 +709,7 @@ packages:
   eslint@8.57.0:
     resolution: {integrity: sha512-dZ6+mexnaTIbSBZWgou51U6OmzIhYM2VcNdtiTtI7qPNZm35Akpr0f6vtw3w1Kmn5PYo+tZVfh13WrhpS6oLqQ==}
     engines: {node: ^12.22.0 || ^14.17.0 || >=16.0.0}
+    deprecated: This version is no longer supported. Please see https://eslint.org/version-support for other options.
     hasBin: true
 
   espree@9.6.1:
@@ -1183,8 +1184,8 @@ packages:
   util@0.10.4:
     resolution: {integrity: sha512-0Pm9hTQ3se5ll1XihRic3FDIku70C+iHUdT/W926rSgHV5QgXsYbKZN8MSC3tJtSkhuROzvsQjAaFENRXr+19A==}
 
-  v-echarts-ui@1.0.6:
-    resolution: {integrity: sha512-FJGa/pGqPN7lZ7KPyHAOXQ1miK97BG5TlWRaaMvn326qeF/OMVLxuHB57MmN8EQNNffD6HGXTGpnEnkvFbO+eg==}
+  v-echarts-ui@1.0.8:
+    resolution: {integrity: sha512-R5VoekTQjmc0yDMV47XnZqCGduxLYj2+DU6I3BAmi5xDaDTkplJKHuOkm/5t/CtCUXHc3BkunIHIPo9RMaX01Q==}
 
   vite@5.4.3:
     resolution: {integrity: sha512-IH+nl64eq9lJjFqU+/yrRnrHPVTlgy42/+IzbOdaFDVlyLgI/wDlf+FCobXLX1cT0X5+7LMyH1mIy2xJdLfo8Q==}
@@ -2385,7 +2386,7 @@ snapshots:
     dependencies:
       inherits: 2.0.3
 
-  v-echarts-ui@1.0.6(typescript@5.5.4):
+  v-echarts-ui@1.0.8(typescript@5.5.4):
     dependencies:
       '@element-plus/icons-vue': 2.3.1(vue@3.5.1(typescript@5.5.4))
       '@vueuse/core': 10.11.1(vue@3.5.1(typescript@5.5.4))
